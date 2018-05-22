@@ -2,11 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Java_Test</groupId>
-	<artifactId>Java_Test</artifactId>
+	<groupId>Java_Test_Classes</groupId>
+	<artifactId>Java_Test_Classes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Java_Test</name>
-	<description>Java_Test</description>
+	<name>Java_Test_Classes</name>
+	<description>Java_Test_Classes</description>
 
 	<build>
 		<plugins>
