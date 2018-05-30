@@ -1,8 +1,11 @@
 package com.st.Comparator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+
+import com.st.Conversion.MegaSimplePdfGenerator;
 
 public class MainClass {
 
@@ -29,7 +32,15 @@ public class MainClass {
 		Student st=(Student)itr1.next();  
 		System.out.println(st.getRollno()+" "+st.getName()+" "+st.getAge()); 
 		}  
-
+		try {
+			MegaSimplePdfGenerator.makeAPdf();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
