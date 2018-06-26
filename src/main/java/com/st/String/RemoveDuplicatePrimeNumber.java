@@ -3,6 +3,7 @@ package com.st.String;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 public class RemoveDuplicatePrimeNumber {
@@ -30,7 +31,15 @@ public class RemoveDuplicatePrimeNumber {
 		}
 		//System.out.println(Collections.frequency(list, list.get(0)));
 		//list.remove(2);
+		
 		System.out.println(list);
+		
+		 IntStream.rangeClosed(2, 100)
+         .filter(i -> IntStream.rangeClosed(2, (int)Math.sqrt(i))
+                 .allMatch(j -> i%j != 0))
+         .forEach(n -> {
+             System.out.println(n);
+         });
 
 	}
 
