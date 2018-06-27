@@ -4,7 +4,7 @@ public class StringExmaplePossbleWord {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String[] dist = {"go","bat","me","eat","goal", 
+		/*String[] dist = {"go","bat","me","eat","goal", 
             "boy", "run"}; 
 		char arr[] = {'e','o','b', 'a','m','g', 'l'};
 		//Stream<char[]> cStream = Stream.of(arr);
@@ -17,8 +17,15 @@ public class StringExmaplePossbleWord {
 			{
 				
 			}
+		}*/
+		
+		String line = "hi this is faiz";
+		
+		String [] str = line.split(" ");
+		for(int i = str.length-1; i >= 0; i--)
+		{
+			System.out.print(str[i] +" ");
 		}
-
 	}
 
 }

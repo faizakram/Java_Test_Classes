@@ -19,7 +19,10 @@ public class RemoveDuplicatePrimeNumber {
 		list.add(17);
 		list.add(29);
 		list.add(17);
-		System.out.println(list);
+		//System.out.println(list);
+	/*
+	 * Remove duplicate prime number in a list
+	 */
 		for (int i = 0; i < list.size(); i++) {
 			if (Collections.frequency(list, list.get(i)) > 1) {
 				final Integer number = list.get(i);
@@ -32,15 +35,17 @@ public class RemoveDuplicatePrimeNumber {
 		//System.out.println(Collections.frequency(list, list.get(0)));
 		//list.remove(2);
 		
-		System.out.println(list);
-		
-		 IntStream.rangeClosed(2, 100)
+		//System.out.println(list);
+		/**
+		 * print 2 to 100 prime number 
+		 */
+		/* IntStream.rangeClosed(2, 100)
          .filter(i -> IntStream.rangeClosed(2, (int)Math.sqrt(i))
                  .allMatch(j -> i%j != 0))
-         .forEach(n -> {
-             System.out.println(n);
-         });
-
+         .forEach(n -> {list.add(n);
+            // System.out.println(n);
+         });*/
+		 System.out.println(list);
 	}
 
 }
