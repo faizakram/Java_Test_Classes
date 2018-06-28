@@ -1,5 +1,6 @@
 package com.st.CSV;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -9,13 +10,20 @@ public class ReadCSV {
 	
 	public void getOutput(String path) {
 		users = CSVReaderUtils.convertCSVToUserModel(path);
+		//Collections.sort(users, (UserModel p1, UserModel p2) -> p1.get.compareTo(p2.firstName));
 	}
 	
 	public void printAll() {
+		
 		for(UserModel userModel : users)
 			System.out.println(userModel);
 	}
 	
+	public void sort()
+	{
+		//Collections.sort(users, (UserModel u1, UserModel u2) -> u1.getCounty.compareTo(u2.getCounty));
+		users.sort((UserModel u1, UserModel u2) -> u1.getCountry().compareTo(u2.getCountry()));
+	}
 	public static void main(String[] args) {
 		 ReadCSV csv = new ReadCSV();
 		 csv.getOutput("E:\\Backup\\test.csv");
