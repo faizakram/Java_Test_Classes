@@ -22,7 +22,8 @@ public class ReadCSV {
 	public void sort()
 	{
 		//Collections.sort(users, (UserModel u1, UserModel u2) -> u1.getCounty.compareTo(u2.getCounty));
-		users.sort((UserModel u1, UserModel u2) -> u1.getCountry().compareTo(u2.getCountry()));
+		//users.sort((UserModel u1, UserModel u2) -> u1.getCountry().compareTo(u2.getCountry()));
+		users.sort((u1, u2) -> u1.getCountry().compareTo(u2.getCountry()));
 	}
 	public static void main(String[] args) {
 		 ReadCSV csv = new ReadCSV();
