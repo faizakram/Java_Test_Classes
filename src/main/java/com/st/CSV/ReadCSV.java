@@ -1,9 +1,10 @@
 package com.st.CSV;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class ReadCSV {
 	public List<UserModel> users;
@@ -26,13 +27,26 @@ public class ReadCSV {
 		users.sort((u1, u2) -> u1.getCountry().compareTo(u2.getCountry()));
 	}
 	public static void main(String[] args) {
-		 ReadCSV csv = new ReadCSV();
+		/* ReadCSV csv = new ReadCSV();
 		 csv.getOutput("E:\\Backup\\test.csv");
 		// csv.printAll();
 		System.out.println(csv.sumOfSalary(csv.users));
 		System.out.println(csv.avgOfSalary(csv.users));
 		System.out.println(csv.groupByOfCity(csv.users));
-		System.out.println(csv.groupByOfGender(csv.users));
+		System.out.println(csv.groupByOfGender(csv.users));*/
+		/*List<Integer> primes = IntStream.range(1, 100)
+			    .filter(this::hasNoFactors)
+			    .collect(Collectors.toList());*/
+		
+		List<Integer> primes = new ArrayList<>();
+		IntStream.rangeClosed(2, 100)
+        .filter(i -> IntStream.rangeClosed(2, (int)Math.sqrt(i))
+                .allMatch(j -> i%j != 0))
+        .forEach(n -> {
+        	primes.add(n);
+        });
+		
+		System.out.println(primes);
 		//Map<String, List<UserModel>> 
 	}
 
