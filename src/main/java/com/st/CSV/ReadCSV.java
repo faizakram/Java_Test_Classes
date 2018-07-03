@@ -9,6 +9,10 @@ import java.util.stream.IntStream;
 public class ReadCSV {
 	public List<UserModel> users;
 	
+	private void meth() {
+		// TODO Auto-generated method stub
+		users.removeIf(producer -> producer.getCity().equals("PATNA") && producer.getCity().equals("PATNA"));
+	}
 	public void getOutput(String path) {
 		users = CSVReaderUtils.convertCSVToUserModel(path);
 		//Collections.sort(users, (UserModel p1, UserModel p2) -> p1.get.compareTo(p2.firstName));
