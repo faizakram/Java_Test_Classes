@@ -32,17 +32,7 @@ public class JsonClass {
 							: tmp;
 				}).forEach(System.out::println);
 
-		List<String> items = Arrays.asList("a","b","c","d","e","1","2","3","4","5");
-		long permutations = Permutations.factorial(items.size());
-		System.out.println(items + " can be combined in " + permutations + " different ways:");
-
-		/*LongStream.range(0, permutations).forEachOrdered(i -> {
-			System.out.println(i + ": " + Permutations.permutation(i, items));
-		});*/
 		
-		/*Permutations.of("A", "B", "C")
-        .flatMap(Function.identity())
-        .forEachOrdered(System.out::print);*/
 
 		/*
 		 * Collections.sort(als,new Comparator<String>() {
