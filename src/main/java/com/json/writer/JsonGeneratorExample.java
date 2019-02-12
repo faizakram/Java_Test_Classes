@@ -16,6 +16,7 @@ public class JsonGeneratorExample {
         User user = new User("abc", 90l);
         objectMapper.writeValue(sw, user);
         sw.close();
+        System.out.println(sw);
        
     }
 }
