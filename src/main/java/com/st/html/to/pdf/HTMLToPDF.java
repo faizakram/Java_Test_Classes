@@ -1,26 +1,33 @@
 package com.st.html.to.pdf;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.tool.xml.XMLWorkerHelper;
-
 public class HTMLToPDF {
 
-	public static void generatePDFFromHTML(String filename) throws DocumentException, IOException {
+	/*public static void generatePDFFromHTML() throws DocumentException, IOException {
+		ByteArrayInputStream css = new ByteArrayInputStream(
+				FileUtils.readFileToByteArray(new File("E:/report/style.css")));
 		Document document = new Document();
-		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("E:/html.pdf"));
+		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("E:/htmql.pdf"));
 		document.open();
-		XMLWorkerHelper.getInstance().parseXHtml(writer, document, new FileInputStream(filename));
+		XMLWorkerHelper.getInstance().parseXHtml(writer, document, new FileInputStream("E:/report/final_invoice.html"),
+				new FileInputStream("E:/report/style.css"));
 		document.close();
-	}
+	}*/
 
-	public static void main(String[] args) throws DocumentException, IOException {
-		HTMLToPDF.generatePDFFromHTML("E:/test.html");
-	}
+	/*public static void main(String[] args) throws DocumentException, IOException {
+		//HTMLToPDF.generatePDFFromHTML();
+		
+		Document document = new Document();
+        // step 2
+        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("E:/report/Reportpdf.pdf"));
+        // step 3
+        document.open();
+        // step 4
+        XMLWorkerHelper.getInstance().parseXHtml(writer, document,
+                new FileInputStream("E:/report/final_invoice.html")); 
+        //step 5
+         document.close();
+ 
+        System.out.println( "PDF Created!" );
+	}*/
 
 }

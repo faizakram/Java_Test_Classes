@@ -14,39 +14,38 @@ import org.imgscalr.Scalr.Mode;
 
 public class ImageResizer {
 
+	public static BufferedImage resizeAndCropToCenter(BufferedImage image, int width, int height) {
+		/*image = Scalr.resize(image, Scalr.Method.QUALITY, Scalr.Mode.FIT_TO_WIDTH, width * 2, height * 2,
+				Scalr.OP_ANTIALIAS);*/
+		
+
+		return Scalr.resize(image, 300, Scalr.OP_ANTIALIAS);
+	}
+
 	public static void main(String[] args) throws IOException {
-		BufferedImage resizedImage = null;
-		BufferedImage bufferedImage = null;
 
-		bufferedImage = ImageIO.read(new File("E:/ImageStore/32-bit-before.jpg"));
+		BufferedImage bufferedImage = resizeAndCropToCenter(ImageIO.read(new File("E:/ImageStore/images.jpeg")),300,300);
 
-		/*
-		 * if (bufferedImage.getWidth() >= 1000 && bufferedImage.getHeight() >= 1000) {
-		 * resizedImage = Scalr.resize(bufferedImage, Mode.FIT_TO_WIDTH, 750, 750); }
-		 * else if (bufferedImage.getWidth() >= 500 && bufferedImage.getHeight() >= 500)
-		 * { resizedImage = Scalr.resize(bufferedImage, Mode.FIT_TO_WIDTH, 500, 500); }
-		 * else { resizedImage = Scalr.resize(bufferedImage, Mode.FIT_TO_WIDTH, 300,
-		 * 200); }
-		 */
-		int maxWidth = 385;
-		int maxHeight = 428;
-		Mode mode = Mode.AUTOMATIC;
-		int maxSize = Math.min(maxWidth, maxHeight);
-		double dh = (double) bufferedImage.getHeight();
-		if (dh > Double.MIN_VALUE) {
-			double imageAspectRatio = (double) bufferedImage.getWidth() / dh;
-			if (maxHeight * imageAspectRatio <= maxWidth) {
-				maxSize = maxHeight;
-				mode = Mode.FIT_TO_HEIGHT;
-			} else {
-				maxSize = maxWidth;
-				mode = Mode.FIT_TO_WIDTH;
-			}
-		}
-		// resizedImage = Scalr.resize(bufferedImage, Method.QUALITY, mode, maxSize,
-		// Scalr.OP_ANTIALIAS) ;
-		resizedImage = Scalr.resize(bufferedImage, Mode.FIT_EXACT, 428, 385);
-		ImageIO.write(resizedImage, "jpg", new File("E:/ImageStore/32-bit-before1.jpg"));
+		ImageIO.write(bufferedImage, "jpg", new File("E:/ImageStore/images1.jpeg"));
 
 	}
+	
+	/*public static void main(String[] args) {
+		try {
+			BufferedImage originalImgage = ImageIO.read(new File("E:/ImageStore/32-bit-before.jpg"));
+			
+			System.out.println("Original Image Dimension: "+originalImgage.getWidth()+"x"+originalImgage.getHeight());
+
+			BufferedImage SubImgage = originalImgage.getSubimage(300, 150, 300, 300);
+			System.out.println("Cropped Image Dimension: "+SubImgage.getWidth()+"x"+SubImgage.getHeight());
+
+			File outputfile = new File("E:/ImageStore/32-bit-before12.jpg");
+			ImageIO.write(SubImgage, "jpg", outputfile);
+
+			System.out.println("Image cropped successfully: "+outputfile.getPath());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}*/
 }

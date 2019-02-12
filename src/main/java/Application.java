@@ -72,6 +72,10 @@ public class Application {
     	int arr[] = {1, 3, 6, 4, 1, 2};
     	//System.out.println(application.solution("Forget  CVs..Save time . x x"));
     	
-    	System.out.println(application.solution2(123456));
+    	//System.out.println(application.solution2(123456));
+    	
+    	Long a = 172l;
+    	Long b = 172l;
+    		System.out.println(a.equals(b));
     }
 }
