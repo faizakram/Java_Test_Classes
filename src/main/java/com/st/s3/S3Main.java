@@ -104,7 +104,6 @@ public class S3Main {
 		List<CopyObjectRequest> list = new ArrayList<>();
 		CopyObjectRequest copyObjectRequest = new CopyObjectRequest("", "", "", "");
 		list.add(copyObjectRequest);
-		getAmazonS3().copyObject(list);
 		getAmazonS3().copyObject(source.getBucketName(), source.getKey(), destination.getBucketName(),
 				destination.getKey());
 
